@@ -1,10 +1,8 @@
 angular.module('TKTestQuestions', [])
 .service('TKTestQuestionService', ['$http', function ($http){
     var service = this;
-}]);
-
-var questions = [];
-service.all = function () {
+    var questions = [];
+    service.all = function () {
         $http.get('files/questions.json')
         .then(function(response){
             if(response.status == 200)
@@ -13,7 +11,7 @@ service.all = function () {
             }
         });
     };
-service.getQuestion = function(questionID)
+    service.getQuestion = function(questionID)
 {
         var results = [];
         questions.forEach(function(question){
@@ -23,11 +21,4 @@ service.getQuestion = function(questionID)
         });
         return results;
 };
-
- /*{
-    "Question_Number": 2,
-    "Answer_ID": {"A", "B"},
-    "Text": "",
-    "Style": {"Competing",  "Collaborating", "Compromising", "Avoiding", "Accommodating"},
-    "id": "objectid"
-  } */ 
+}]);
