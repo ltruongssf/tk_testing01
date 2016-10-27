@@ -30,11 +30,6 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
     templateUrl: 'templates/lobby.html',
   })
   .state('question', {
-    url: '/question',
-    templateUrl: 'templates/question.html',
-  });
-});
-.state('question', {
     url: '/question:questionID',
     templateUrl: 'templates/question.html',
     controller: 'QuestionsCtrl',
@@ -44,3 +39,4 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
       }
     }
 })
+});
