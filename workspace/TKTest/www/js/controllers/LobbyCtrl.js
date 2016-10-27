@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
-.controller('LobbyCtrl',['$scope', 'TKTestQuestionService',
-   function($scope, TKTestQuestionService) {
+.controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService',
+   function($scope, TKTestQuestionService, $state, TKAnswersService) {
    TKTestQuestionService.all();
    $scope.goToTest = function()
    {
