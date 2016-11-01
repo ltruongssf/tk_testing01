@@ -8,5 +8,18 @@ angular.module('starter.controllers')
         TKAnswersService.resetAnswers();
            $state.go('question',{questionID:1});
    };
+   function performRequest() {
+    var answersDict = angular.copy(TKAnswersService.getAnswers());
+    var $ionicHistory = this;
+    var date = new Date();
+    answersDict["createDate"] = date.toUTCString();
+    TKAnswersService.saveTest(answersDict);
+    $ionicHistory.nextViewOptions({
+         historyRoot: true
+    });
+    $state.go('lobby');
+}
 
 }]);
+
+
