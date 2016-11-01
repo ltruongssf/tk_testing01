@@ -1,3 +1,4 @@
+/*global angular */ 
 angular.module('starter.controllers')
 .controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService',
    function($scope, TKTestQuestionService, $state, TKAnswersService) {

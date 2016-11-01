@@ -1,1 +1,13 @@
-/* Empty. Add your own CSS if you like */
+.item.item-divider:hover {
+
+    background-color: slategray !important;
+    border-color: slategray !important;
+}
+.item.item-text-wrap {
+    font-family: "Courier New";
+    font-weight: bold;
+}
+
+.has-errors {
+ border: 1px solid red;
+}
