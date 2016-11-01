@@ -62,17 +62,22 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
       .state('landing', {
         url: '/',
         templateUrl: 'templates/landing.html'
-       
-      }) 
+
+      })
       .state('register', {
         url: '/register',
         templateUrl: 'templates/register.html',
         controller: 'RegisterCtrl'
       })
-      .state('login', {
-        url: '/login',
+      .state('logout', {
+        url: '/logout',
         templateUrl: '',
         controller: ''
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
 
       });
 

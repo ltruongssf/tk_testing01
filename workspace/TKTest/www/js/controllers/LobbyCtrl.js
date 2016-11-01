@@ -19,6 +19,9 @@ angular.module('starter.controllers')
     });
     $state.go('lobby');
 }
+    $scope.logout = function() {
+         $state.go('landing');
+    };
 
 }]);
 

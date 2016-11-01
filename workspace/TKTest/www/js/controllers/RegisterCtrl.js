@@ -8,10 +8,26 @@ angular.module('starter.controllers')
                 //SSFUsersRest.post();
                 SSFUsersRest.post($scope.user)
                     .then(function(response) {
+                       $window.localStorage.userID = response.data.ID;
+                       $window.localStorage.token = response.data.token;
+                    
+                    if(response.data === null) {
+                        return alert('User is offline');
+           }
+                    else if(response.status=== 200) {
                         $state.go('lobby');
-                    }, function(error) {
-                        // inform the user of any known problems that arose, otherwise give a generic 
-                        // failed message
+                    }
+                   
+                    },  function(error) {
+                        if(error.status=== 404) {
+                            return alert('Not found!');
+                        }
+                        else if(error.status === 422) {
+                            return alert('Email is already taken!');
+                        }
+                        else if(error.status === 422) {
+                            return alert('Email is already taken!');
+                        }
                         alert("Please complete the form!");
                     });
 
