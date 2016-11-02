@@ -1,7 +1,7 @@
 /*global angular */ 
 angular.module('starter.controllers')
-.controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService',
-   function($scope, TKTestQuestionService, $state, TKAnswersService) {
+.controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService', '$window', 'SSFUsersRest', 
+   function($scope, TKTestQuestionService, $state, TKAnswersService, $window, SSFUsersRest) {
    TKTestQuestionService.all();
    $scope.goToTest = function()
    {
@@ -20,6 +20,8 @@ angular.module('starter.controllers')
     $state.go('lobby');
 }
     $scope.logout = function() {
+         SSFUsersRest.logout($window.localStorage.token);
+         
          $state.go('landing');
     };
 

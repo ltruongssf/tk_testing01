@@ -1,13 +1,12 @@
 
 angular.module("RESTServices")
-    .service('QuestionsRest', function($http, TKTestQuestionService, $window) {
+    .service('QuestionsRest', function($http, $window) {
         var QuestionsRest = this;
-        QuestionsRest.get = function(newUserData, token) {
+        QuestionsRest.get = function(token) {
             $window.localStorage[token];
             return $http({
-                url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/SSFUsers/logout",
-                method: "POST",
-                data: newUserData,
+                url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/Questions/",
+                method: "GET",
                 headers: {
                     Authorization: token
                 },
