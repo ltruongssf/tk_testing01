@@ -45,4 +45,10 @@ angular.module('TKTestAnswers',[])
     {
         answerCategories = answers;
     };
+     service.save = function(test)
+    {
+        var tempTests = $window.localStorage.tests === undefined ? [] : JSON.parse($window.localStorage.tests);
+        tempTests.push(test);
+        $window.localStorage.tests = JSON.stringify(tempTests);
+    };
 }]);
