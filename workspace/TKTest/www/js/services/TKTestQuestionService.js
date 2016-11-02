@@ -1,5 +1,6 @@
 angular.module('TKTestQuestions', [])
-    .service('TKTestQuestionService', ['$http', '$window', 'QuestionsRest', function($http, $window, QuestionsRest) {
+    .service('TKTestQuestionService', ['$http', '$window', 'QuestionsRest', 
+    function($http, $window, QuestionsRest) {
         var service = this;
         var questions = [];
         service.all = function() {
