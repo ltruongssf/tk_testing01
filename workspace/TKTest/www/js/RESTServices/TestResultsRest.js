@@ -12,7 +12,7 @@ angular.module("RESTServices")
         };
         TestResultsRest.save = function(test, token) {
             return $http({
-                url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/TestResults",
+                url: "https://strongloop-backend-ohheyitslisa.c9users.io:8080/api/TestResults",
                 method: 'POST',
                 data: test,
                 Headers: {
