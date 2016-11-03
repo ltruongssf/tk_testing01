@@ -17,5 +17,14 @@ var TestResultsRest = this;
            data: test
        });
    };
+     TestResultsRest.getAll = function(token) {
+       return $http({
+           Headers:{
+                 Authorization: token
+            },
+           url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/TestResults",
+           method: 'GET',
+       });
+   };
    
 });
