@@ -22,7 +22,7 @@ angular.module("RESTServices")
         };
         TestResultsRest.get = function(userID, token) {
             return $http({
-                url: "https://revamped-tktest-jbrownssf.c9users.io:8081/api/SSFUsers?filter[where][userID]=" + userID,
+                url: "https://strongloop-backend-ohheyitslisa.c9users.io:8081/api/TestResults?filter[where][userID]=" + userID,
                 method: 'GET',
                 headers: {
                     'Authorization': token
