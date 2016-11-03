@@ -4,6 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 /*global angular cordova StatusBar*/
+/* global $window */ 
 angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'TKTestAnswers', 'chart.js', 'TKResultsButton', 'RESTServices'])
 
 .run(function($ionicPlatform) {
@@ -55,7 +56,7 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
         controller: 'HistoryCtrl',
         resolve: {
           tests: ['TKAnswersService', function(TKAnswersService) {
-            return TKAnswersService.getTests();
+            return TKAnswersService.getTests($window.localStorage.token);
           }]
         }
       })
