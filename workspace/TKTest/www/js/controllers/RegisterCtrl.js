@@ -8,7 +8,7 @@ angular.module('starter.controllers')
                 //SSFUsersRest.post();
                 SSFUsersRest.post($scope.user)
                     .then(function(response) {
-                       $window.localStorage.userID = response.data.ID;
+                       $window.localStorage.userID = response.data.id;
                        $window.localStorage.token = response.data.token;
                     
                     if(response.data === null) {
