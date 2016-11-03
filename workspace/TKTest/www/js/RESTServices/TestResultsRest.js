@@ -15,12 +15,19 @@ angular.module("RESTServices")
                 url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/TestResults",
                 method: 'POST',
                 data: test,
-                 Headers: {
+                Headers: {
                     Authorization: token
                 },
             });
         };
-
+        TestResultsRest.get = function(userID, token) {
+            return $http({
+                url: "https://revamped-tktest-jbrownssf.c9users.io:8081/api/SSFUsers?filter[where][userID]=" + userID,
+                method: 'GET',
+                headers: {
+                    'Authorization': token
+                }
+            });
+        };
 
     });
-    

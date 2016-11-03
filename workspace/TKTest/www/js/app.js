@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
         controller: 'HistoryCtrl',
         resolve: {
           tests: ['TKAnswersService', '$window', function(TKAnswersService, $window) {
-            return TKAnswersService.getTests($window.localStorage.token)
+            return TKAnswersService.getTests($window.localStorage.userID, $window.localStorage.token)
            
             .then(function(response){
               if(response.status=== 200) {
