@@ -8,7 +8,7 @@ angular.module('starter.controllers')
                 SSFUsersRest.login($scope.user)
                     .then(function(response) {
                         $window.localStorage.userID = response.data.userId;
-                        $window.localStorage.token = response.data.token;
+                        $window.localStorage.token = response.data.id;
                         if(response.data === null) {
                             return alert("User is offline"); 
                         } else if(response.status === 200) {

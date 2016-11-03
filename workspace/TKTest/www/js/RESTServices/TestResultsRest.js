@@ -20,23 +20,7 @@ angular.module("RESTServices")
                 },
             });
         };
-        TestResultsRest.getAll = function(token) {
-            return $http({
-                Headers: {
-                    Authorization: token
-                },
-                url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/TestResults",
-                method: 'GET',
-            });
-        };
-        TestResultsRest.get = function(token) {
-            return $http({
-                url: "https://strongloop-backend-ohheyitslisa.c9users.io/api/TestResults/",
-                method: 'GET',
-                headers: {
-                    'Authorization': token
-                }
-            });
-        };
+
 
     });
+    

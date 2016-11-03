@@ -49,8 +49,10 @@ function ($window, TestResultsRest) {
                         }
                     });
     };
-     service.getTests = function() {
-         return $window.localStorage.tests ? JSON.parse($window.localStorage.tests): [];
+     service.getTests = function(token) {
+         //return $window.localStorage.tests ? JSON.parse($window.localStorage.tests): [];
+        
+        return TestResultsRest.getAll(token);
     };
    
     service.setAnswers = function(answers)

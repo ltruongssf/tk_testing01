@@ -55,8 +55,17 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
         templateUrl: 'templates/history.html',
         controller: 'HistoryCtrl',
         resolve: {
-          tests: ['TKAnswersService', function(TKAnswersService) {
-            return TKAnswersService.getTests($window.localStorage.token);
+          tests: ['TKAnswersService', '$window', function(TKAnswersService, $window) {
+            return TKAnswersService.getTests($window.localStorage.token)
+           
+            .then(function(response){
+              if(response.status=== 200) {
+                return response.data;
+              }
+              else {
+                alert("Erorr!");
+              }   
+            }); 
           }]
         }
       })
