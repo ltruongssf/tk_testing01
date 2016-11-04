@@ -33,8 +33,8 @@ angular.module('starter.controllers')
             tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value.toFixed(0) %>" + "%",
             };
             $scope.colours = [{
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(15,187,25,1)",
+            fillColor: "rgb(255,223,0)",
+            strokeColor: "rgb(255,223,0)",
             pointColor: "rgba(15,187,25,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
